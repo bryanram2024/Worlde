@@ -17,7 +17,7 @@ reset = Style.RESET_ALL   # Reset Styling Elements
 # List of four letter words
 four_letter_words = [
     'area', 'army', 'baby', 'back', 'ball', 'band', 'bank', 'base', 'bite', 'blue', 'body', 'book', 'cake', 'call', 'card',
-    'care', 'case', 'cash', 'cave', 'city', 'club', 'cost', 'date', 'deal', 'disk', 'door', 'east', 'face', 'fact', 'farm',
+    'care', 'case', 'cash', 'cave', 'city', 'club', 'cost', 'date', 'deal', 'disk', 'door', 'east', 'face', 'fact', 'fwesarm',
     'fear', 'film', 'fire', 'fish', 'food', 'foot', 'foul', 'game', 'girl', 'glow', 'goal', 'gold', 'hair', 'half', 'hall',
     'hand', 'head', 'help', 'hike', 'hill', 'home', 'hope', 'hour', 'hype', 'icon', 'idea', 'iron', 'jazz', 'kind', 'king',
     'kite', 'lady', 'land', 'lazy', 'life', 'lime', 'line', 'list', 'look', 'lord', 'loss', 'love', 'mind', 'miss', 'move',
@@ -75,16 +75,6 @@ def user_dif_mode():
             print("Error. Please try again")
 
 """
-Outputs Game Instructions to the user.
-Uses 'level' parameter to output random word length and number of attempts.
-"""
-def game_instructions(level):
-    print(f"You have {bold}{yellow_l}{level}{reset} tries to guess the {bold}{yellow_l}{level}{reset}-letter word I'm thinking of")
-    print(f"{green_h}{bold}Green{reset} = Letter in Exact Position")
-    print(f"{yellow_h}{bold}Yellow{reset} = Letter is in word but in Different Position")
-    print(f"{red_h}{bold}Red{reset} = Letter is not in word")
-
-"""
 Generates a random word from list based on length of word.
 Uses 'level' parameter from user to determine which list to use.
 Returns a random word.
@@ -97,6 +87,17 @@ def generate_rand_word(level):
         return list(five_letter_words[num])
     else:
         return list(six_letter_words[num])
+
+"""
+Outputs Game Instructions to the user.
+Uses 'level' parameter to output random word length and number of attempts.
+"""
+def game_instructions(level):
+    print(f"You have {bold}{yellow_l}{level}{reset} tries to guess the {bold}{yellow_l}{level}{reset}-letter word I'm thinking of")
+    print(f"{green_h}{bold}Green{reset} = Letter in Exact Position")
+    print(f"{yellow_h}{bold}Yellow{reset} = Letter is in word but in Different Position")
+    print(f"{red_h}{bold}Red{reset} = Letter is not in word")
+
 
 """
 Prompts User to attempt to guess the word and checks if word inputted is correctly formatted.
@@ -116,14 +117,14 @@ def get_user_guess(level, num):
 
 """
 Compares user's guess to the random word.
-Uses 'level' parameter to set attempts limit.
+Uses 'level' parameter to set number of attempts.
 'r_word' parameter is the random word generated.
 If attempted word equals the random word then it highlights each letter Green and returns True.
 Otherwise, it iterates through the attempted guess, and highlights each letter based on the random word.
     If letter is in exact position as random word, highlight letter Green.
     If letter is not in the same position as random word but is in word, highlight Yellow.
-    If letter is not in random word, highlight letter Red.
-If word is not guess, return False.
+    If letter is not in random word (or no more of the same letter in word), highlight letter Red.
+After all attempts, If word is not guessed return False.
 """
 def game(level, r_word):
     attempt = 0
@@ -138,18 +139,36 @@ def game(level, r_word):
         # Else, iterate and compare user's guess word to random word.
         else:
             # Compare a letter at a time.
+            # Make a list that holds the color values for each letter in guessed.
+            color = [None] * level
+            # Make a list that holds the available letters. This prevents repeated letters
+            # turning yellow.
+            available_letters = r_word[:]
+            # Iterate through every letter first to macth green letters and remove from availabe
+            # letters.
             for i in range(level):
-                # If current letter in user guess matches random word in same position, highlight green and skip to next letter.
+                # If current letter in user guess matches random word in same position,
+                # input green in list color in the same index and remove from avaiilable letters.
                 if user_guess[i] == r_word[i]:
-                    print(f"{green_h}{bold}{user_guess[i]}{reset}", end = "")
-                # Else, compare the current letter to every letter in random guess.
-                else:
-                    # If current letter matches a letter in random word no matter the position, highlight letter yellow.
-                    if any(letter == user_guess[i] for letter in r_word):
-                        print(f"{yellow_h}{bold}{user_guess[i]}{reset}", end = "")
-                    # Else highlight letter red.
-                    else:
-                        print(f"{red_h}{bold}{user_guess[i]}{reset}", end = "")
+                    color[i] = green_h
+                    available_letters.remove(user_guess[i])
+            # Iterate again but for yellow and red letters.
+            for i in range(level):
+                # This if will prevent already green letters to be modifed.
+                if color[i] == None:
+                    # Iterate through available_letters. If letter in user guess matches any,
+                    # remove the letter from available letters and make the color yellow.
+                    for j in range(len(available_letters)):
+                        if user_guess[i] == available_letters[j]:
+                            color[i] = yellow_h
+                            available_letters.remove(user_guess[i])
+                            break
+                        # If no matches, then make color red.
+                        else:
+                            color[i] = red_h
+            # Print out letters with their colors.
+            for i in range(level):
+                print(f"{color[i]}{bold}{user_guess[i]}{reset}", end = "")
         print("")
         attempt += 1
     return False
@@ -172,7 +191,6 @@ def main():
     print(f"{red_h}{bold}Welcome to Worlde!{reset}")
     mode = user_dif_mode()
     random_word = generate_rand_word(mode)
-    print(random_word)
     game_instructions(mode)
     word_guessed = game(mode, random_word)
     check_win(word_guessed, random_word)
