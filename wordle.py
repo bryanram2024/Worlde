@@ -7,7 +7,6 @@ import openai                            # Imports 'openai' library to use ChatG
 
 # Openai API Key
 
-
 # Styling Elements
 green_h = Back.GREEN      # Highlights Green
 yellow_h = Back.YELLOW    # Highlights Yellow
