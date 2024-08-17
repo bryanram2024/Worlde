@@ -6,7 +6,7 @@ from colorama import Fore, Back, Style   # Imports 'colorama' library that adds 
 import openai                            # Imports 'openai' library to use ChatGPT to generate random word.
 
 # Openai API Key
-#openai.api_key = "sk-proj-h7653ybSG1getkhJPbjiT3BlbkFJbtisCzI5buaarYhP6VDf"
+openai.api_key = ""
 
 # Styling Elements
 green_h = Back.GREEN      # Highlights Green
