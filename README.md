@@ -3,6 +3,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+https://raw.githubusercontent.com/bryanrg22/Wordle/main/AP_CSP_Project_Video.mov
+
 ### Built With
 ![python_badge]
 ![openai_badge]
