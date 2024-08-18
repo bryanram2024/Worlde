@@ -5,7 +5,10 @@ Wordle: A game where the User Guesses the Random Word.
 from colorama import Fore, Back, Style   # Imports 'colorama' library that adds style features to output in the terminal.
 import openai                            # Imports 'openai' library to use ChatGPT to generate random word.
 
+
 # Openai API Key
+
+
 
 # Styling Elements
 green_h = Back.GREEN      # Highlights Green
@@ -47,12 +50,10 @@ def open_ai(prompt):
 
 
 """
-Generates a random word from list based on length of word.
-Uses 'level' parameter from user to determine which list to use.
+Generates a random word using the ChatGPT API.
 Returns a random word.
 """
 def generate_rand_word(level):
-    
     return list(open_ai(f"Give me a common word with a length of {level} that can be easily guessed for a Wordle game. Only return just the lowercased word and nothing else."))
     
 
@@ -61,10 +62,20 @@ Outputs Game Instructions to the user.
 Uses 'level' parameter to output random word length and number of attempts.
 """
 def game_instructions(level):
-    print(f"You have {bold}{yellow_l}{level}{reset} tries to guess the {bold}{yellow_l}{level}{reset}-letter word I'm thinking of")
+    print(f"\nYou have {bold}{yellow_l}{level}{reset} tries to guess the {bold}{yellow_l}{level}{reset}-letter word I'm thinking of")
     print(f"{green_h}{bold}Green{reset} = Letter in Exact Position")
     print(f"{yellow_h}{bold}Yellow{reset} = Letter is in word but in Different Position")
-    print(f"{red_h}{bold}Red{reset} = Letter is not in word")
+    print(f"{red_h}{bold}Red{reset} = Letter is not in word\n")
+    print(f"{yellow_l}{bold}Stuck?{reset} Needing a {yellow_l}{bold}hint?{reset} Just type {yellow_l}{bold}y{reset} to use up to {yellow_l}{bold}{level - 1}{reset}\n")
+
+
+"""
+Generates a hint to help the user guess the word.
+Uses 'level' parameter from user to determine which list to use.
+Returns a random word.
+"""
+def generate_Hint(guess):
+    return open_ai(f"Give the user a hint to guess the word {guess}")
 
 
 """
@@ -73,16 +84,22 @@ Uses 'level' paramter to check attempted word length.
 Uses 'num' paramter to display Attempt number.
 Returns User's Attempted word.
 """
-def get_user_guess(level, num):
+def get_user_guess(level, r_word, attempt, hint):
     while True:
-        guess = input(f"Attempt {yellow_l}{bold}{num + 1}{reset}: ").lower()
+        guess = input(f"Attempt {yellow_l}{bold}{attempt + 1}{reset}: ").lower()
         if len(guess) == level and not any(char.isdigit() for char in guess):
             return guess
+        elif guess == "y":
+            if hint == level - 1:
+                print("You are all out of hints!\n")
+            else:
+                print(f"Hint {yellow_l}{bold}{hint+1}{reset}: {generate_Hint(r_word)}\n")
+                hint += 1
         elif any(char.isdigit() for char in guess):
             print("Error. Inputted attempt must only include letters.")
         else:
             print(f"Error. Inputted word must be a {level}-letter word!")
-
+   
 
 """
 Compares user's guess to the random word.
@@ -96,31 +113,40 @@ Otherwise, it iterates through the attempted guess, and highlights each letter b
 After all attempts, If word is not guessed return False.
 """
 def game(level, r_word):
+    # Variables to hold number of attempts and hints used
     attempt = 0
+    hint = 0
+
     # Will run until max number of attempts set by level or random word is guessed by user.
     while attempt < level:
         # Prompt user to guess the random word and covert to list.
-        user_guess = list(get_user_guess(level, attempt))
+        user_guess = list(get_user_guess(level, r_word, attempt, hint))
+
         # If user guesses the random word, break the loop and return True.
         if user_guess == r_word:
             print(f"{green_h}{bold}{''.join(r_word)}{reset}")
             return True
+        
         # Else, iterate and compare user's guess word to random word.
         else:
             # Compare a letter at a time.
             # Make a list that holds the color values for each letter in guessed.
             color = [None] * level
+
             # Make a list that holds the available letters. This prevents repeated letters
             # turning yellow.
             available_letters = r_word[:]
+
             # Iterate through every letter first to macth green letters and remove from availabe
             # letters.
+
             for i in range(level):
                 # If current letter in user guess matches random word in same position,
                 # input green in list color in the same index and remove from avaiilable letters.
                 if user_guess[i] == r_word[i]:
                     color[i] = green_h
                     available_letters.remove(user_guess[i])
+
             # Iterate again but for yellow and red letters.
             for i in range(level):
                 # This if will prevent already green letters to be modifed.
@@ -138,7 +164,7 @@ def game(level, r_word):
             # Print out letters with their colors.
             for i in range(level):
                 print(f"{color[i]}{bold}{user_guess[i]}{reset}", end = "")
-        print("")
+        print("\n")
         attempt += 1
     return False
 
@@ -151,17 +177,16 @@ Checks for winner and loser and prints Result.
 """
 def check_win(word_guessed, random_word):
     if word_guessed:
-        print("Word Guessed Correctly! You win.")
+        print("Word Guessed Correctly! You win!\n")
     else:
         print(f"Word was {red_l}{bold}not{reset} Guessed. Word = {yellow_l}{bold}{''.join(random_word)}{reset}")
-        print("Better luck next time.")
-
+        print("Better luck next time.\n")
 
 
 
 # Main Function of the Program
 def main():
-    print(f"{red_h}{bold}Welcome to Worlde!{reset}")
+    print(f"\n{red_h}{bold}Welcome to Worlde!{reset}")
     mode = user_dif_mode()
     random_word = generate_rand_word(mode)
     game_instructions(mode)
