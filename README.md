@@ -4,10 +4,8 @@
 
 ### Built With
 
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![OpenAI](https://a11ybadges.com/badge?logo=openai)
-
-
+![python_badge]
+![openai_badge]
 
 
 <!-- GETTING STARTED -->
@@ -51,7 +49,8 @@ Project Link: [https://github.com/bryanrg22/Wordle.git](https://github.com/bryan
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-[github_badge]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
-[gmail_badge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[python_badge]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
+[openai_badge]: https://a11ybadges.com/badge?logo=openai
 [linkedin_badge]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[gmail_badge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[github_badge]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
