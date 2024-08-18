@@ -3,7 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-https://user-images.githubusercontent.com/782127/234028498-96e206b0-9a70-4aa0-9c36-a62477ea0aa9.mp4
+https://raw.githubusercontent.com/bryanrg22/Wordle/main/AP_CSP_Project_video.mov
 
 ### Built With
 ![python_badge]
