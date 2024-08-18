@@ -15,7 +15,7 @@
 
 ### Prerequisites
 
-First you must download the necessary libraries to get the program running!
+First you must download the necessary libraries to get the program running! As of this guide, it will direct you on how to download the libraries on a Mac device.
 1. npm
   ```sh
   npm install npm@latest -g
