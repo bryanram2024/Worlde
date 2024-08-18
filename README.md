@@ -16,7 +16,7 @@
 ### Prerequisites
 
 First you must download the necessary libraries to get the program running!
-* 1. npm
+1. npm
   ```sh
   npm install npm@latest -g
   ```
