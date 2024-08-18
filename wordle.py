@@ -66,7 +66,7 @@ def game_instructions(level):
     print(f"{green_h}{bold}Green{reset} = Letter in Exact Position")
     print(f"{yellow_h}{bold}Yellow{reset} = Letter is in word but in Different Position")
     print(f"{red_h}{bold}Red{reset} = Letter is not in word\n")
-    print(f"{yellow_l}{bold}Stuck?{reset} Needing a {yellow_l}{bold}hint?{reset} Just type {yellow_l}{bold}y{reset} to use up to {yellow_l}{bold}{level - 1}{reset}\n")
+    print(f"{yellow_l}{bold}Stuck?{reset} Needing a {yellow_l}{bold}hint?{reset} Just type {yellow_l}{bold}y{reset} to use up to {yellow_l}{bold}{level - 2}{reset}\n")
 
 
 """
@@ -90,15 +90,15 @@ def get_user_guess(level, r_word, attempt, hint):
         if len(guess) == level and not any(char.isdigit() for char in guess):
             return guess
         elif guess == "y":
-            if hint == level - 1:
+            if hint == level - 2:
                 print("You are all out of hints!\n")
             else:
                 print(f"Hint {yellow_l}{bold}{hint+1}{reset}: {generate_Hint(r_word)}\n")
                 hint += 1
         elif any(char.isdigit() for char in guess):
-            print("Error. Inputted attempt must only include letters.")
+            print("Error. Inputted attempt must only include letters.\n")
         else:
-            print(f"Error. Inputted word must be a {level}-letter word!")
+            print(f"Error. Inputted word must be a {level}-letter word!\n")
    
 
 """
@@ -117,6 +117,7 @@ def game(level, r_word):
     attempt = 0
     hint = 0
     guesses_colors = []
+    guesses = []
 
     # Will run until max number of attempts set by level or random word is guessed by user.
     while attempt < level:
@@ -162,17 +163,19 @@ def game(level, r_word):
                         # If no matches, then make color red.
                         else:
                             color[i] = red_h
-            guesses_colors.append(color)
-            # Print out letters with their colors.
-            #for i in range(len(guesses_colors)):
-            #    for j in range(len(guesses_colors[i])):
-            #        print(f"{guesses_colors[i][j]}{bold}{user_guess[i]}{reset}", end = "")
-            #    print()
-            #print("\n")
 
-            for i in range(level):
-                print(f"{color[i]}{bold}{user_guess[i]}{reset}", end = "")
+            guesses_colors.append(color)
+            guesses.append(user_guess)
+
+            # Print out letters with their colors.
+            for i in range(len(guesses_colors)):
+                print(f"{yellow_l}{bold}{i+1}.{reset} ", end="")
+                for j in range(len(guesses_colors[i])):
+                    print(f"{guesses_colors[i][j]}{bold}{guesses[i][j]}{reset}", end = "")
+                print("")
+            print("")
         print("")
+
         attempt += 1
     return False
 
