@@ -20,7 +20,7 @@
 
 1. Get a API Key at [(https://platform.openai.com/api-keys)](https://platform.openai.com/api-keys)
 
-2. Clone the repo
+2. Clone the repo or simply download the python file
    ```sh
    git clone https://github.com/bryanrg22/Wordle.git
    ```
@@ -36,14 +36,5 @@
    ```js
    openai.api_key = 'ENTER YOUR API'
    ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
-   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-
