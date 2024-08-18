@@ -16,6 +16,7 @@ red_l = Fore.RED          # Red Letter
 bold = Style.BRIGHT       # Bold Letter
 reset = Style.RESET_ALL   # Reset Styling Elements
 
+
 """
 Prompts User for Difficulty Mode. Checks if only a word is inputted.
 Returns a int that represents the length of the random word.
@@ -32,6 +33,7 @@ def user_dif_mode():
         else:
             print("Error. Please try again")
 
+
 """
 Openai Function that sends response to ChatGPT and returns it's response.
 """
@@ -42,6 +44,7 @@ def open_ai(prompt):
         ]
     )
     return response.choices[0].message.content.strip()
+
 
 """
 Generates a random word from list based on length of word.
@@ -79,6 +82,7 @@ def get_user_guess(level, num):
             print("Error. Inputted attempt must only include letters.")
         else:
             print(f"Error. Inputted word must be a {level}-letter word!")
+
 
 """
 Compares user's guess to the random word.
@@ -138,6 +142,7 @@ def game(level, r_word):
         attempt += 1
     return False
 
+
 """
 Checks for winner and loser and prints Result.
 'word_guess' parameter is a boolean that tells function if winner or loser.
@@ -150,6 +155,7 @@ def check_win(word_guessed, random_word):
     else:
         print(f"Word was {red_l}{bold}not{reset} Guessed. Word = {yellow_l}{bold}{''.join(random_word)}{reset}")
         print("Better luck next time.")
+
 
 
 
