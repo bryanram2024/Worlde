@@ -164,11 +164,15 @@ def game(level, r_word):
                             color[i] = red_h
             guesses_colors.append(color)
             # Print out letters with their colors.
-            for i in range(len(guesses_colors)):
-                for j in range(len(guesses_colors[i])):
-                    print(f"{guesses_colors[i][j]}{bold}{user_guess[i]}{reset}", end = "")
-                print()
-            print("\n")
+            #for i in range(len(guesses_colors)):
+            #    for j in range(len(guesses_colors[i])):
+            #        print(f"{guesses_colors[i][j]}{bold}{user_guess[i]}{reset}", end = "")
+            #    print()
+            #print("\n")
+
+            for i in range(level):
+                print(f"{color[i]}{bold}{user_guess[i]}{reset}", end = "")
+        print("")
         attempt += 1
     return False
 
