@@ -39,7 +39,8 @@
 
 <!-- CONTACT -->
 ## Contact
-[![linkedin_badge]](https://linkedin.com/in/bryanrg22)
+![linkedin_badge](https://linkedin.com/in/bryanrg22)
+
 Bryan Ramirez-Gonzalez - [Add me on Linkedin!](https://linkedin.com/in/bryanrg22) - bryanram2024@gmail.com
 
 Project Link: [https://github.com/bryanrg22/Wordle.git](https://github.com/bryanrg22/Wordle.git)
