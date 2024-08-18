@@ -8,7 +8,7 @@ import random                            # Imports 'random' library to randomize
 
 
 # Openai API Key
-openai.api_key = "#ENTER_YOUR_API_KEY_HERE#"
+openai.api_key = 'ENTER YOUR API'
 
 
 # Styling Elements
