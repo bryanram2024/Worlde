@@ -16,17 +16,18 @@
 ### Prerequisites
 
 First you must download the necessary libraries to get the program running! As of this guide, it will direct you on how to download the libraries on a Mac device.
-1. npm
+
+1. Install Colorama in the terminal
   ```sh
-  npm install npm@latest -g
+  pip install colorama
   ```
 
-  * npm
+2. Install Openai in the terminal
   ```sh
-  npm install npm@latest -g
+  pip install openai
   ```
 
-  * npm
+3. Activate an OpenAI API Key
   ```sh
   npm install npm@latest -g
   ```
