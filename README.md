@@ -14,13 +14,12 @@
 ## Getting Started
 
 
-
 ### Installation
 
 
 1. Get a OpenAI API Key at [(https://platform.openai.com/api-keys)](https://platform.openai.com/api-keys)
 
-2. Clone the repo or simply download the python file
+2. Clone the Repo or simply Download the Python File
    ```sh
    git clone https://github.com/bryanrg22/Wordle.git
    ```
@@ -39,6 +38,8 @@
 
 <!-- CONTACT -->
 ## Contact Me
+
+
 
 [![linkedin_badge]](https://linkedin.com/in/bryanrg22)  [![gmail_badge]](mailto:bryanram2024@gmail.com) [![github_badge]](http://www.github.com/bryanrg22)
 
