@@ -40,7 +40,7 @@
 <!-- CONTACT -->
 ## Contact
 
-[![gmail_badge]](gmail.com)
+[![gmail_badge]](bryanram2024@gmail.com)
 
 Bryan Ramirez-Gonzalez - [Add me on Linkedin!](https://linkedin.com/in/bryanrg22) - bryanram2024@gmail.com
 
