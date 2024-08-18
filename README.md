@@ -29,13 +29,15 @@ How to Play
 
 This project combines Python programming, API integration, and terminal-based game design, providing a fun and educational experience for developers and players alike. 
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-
 ### Installation
-
 
 1. Get a OpenAI API Key at [(https://platform.openai.com/api-keys)](https://platform.openai.com/api-keys)
 
@@ -55,21 +57,23 @@ This project combines Python programming, API integration, and terminal-based ga
    ```js
    openai.api_key = 'ENTER YOUR API'
    ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 
 <!-- CONTACT -->
 ## Contact Me
 
-
-
 [![linkedin_badge]](https://linkedin.com/in/bryanrg22)  [![gmail_badge]](mailto:bryanram2024@gmail.com) [![github_badge]](http://www.github.com/bryanrg22)
 
 Bryan Ramirez-Gonzalez - [Add me on Linkedin!](https://linkedin.com/in/bryanrg22) - [bryanram2024@gmail.com](mailto:bryanram2024@gmail.com)
-
 Project Link: [https://github.com/bryanrg22/Wordle.git](https://github.com/bryanrg22/Wordle.git)
 
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 
 [python_badge]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [openai_badge]: https://a11ybadges.com/badge?logo=openai
