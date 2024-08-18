@@ -34,9 +34,10 @@
 
 
 1. Get a API Key at [(https://platform.openai.com/api-keys)](https://platform.openai.com/api-keys)
+
 2. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/bryanrg22/Wordle.git
    ```
 3. Install NPM packages
    ```sh
