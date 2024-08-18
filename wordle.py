@@ -116,6 +116,7 @@ def game(level, r_word):
     # Variables to hold number of attempts and hints used
     attempt = 0
     hint = 0
+    guesses_colors = []
 
     # Will run until max number of attempts set by level or random word is guessed by user.
     while attempt < level:
@@ -161,10 +162,13 @@ def game(level, r_word):
                         # If no matches, then make color red.
                         else:
                             color[i] = red_h
+            guesses_colors.append(color)
             # Print out letters with their colors.
-            for i in range(level):
-                print(f"{color[i]}{bold}{user_guess[i]}{reset}", end = "")
-        print("\n")
+            for i in range(len(guesses_colors)):
+                for j in range(len(guesses_colors[i])):
+                    print(f"{guesses_colors[i][j]}{bold}{user_guess[i]}{reset}", end = "")
+                print()
+            print("\n")
         attempt += 1
     return False
 
