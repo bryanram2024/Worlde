@@ -13,21 +13,6 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-### Prerequisites
-
-* First you must download the necessary libraries to get the program running!
-* As of this guide, it will direct you on how to download the libraries on a Mac device.
-
-1. Install Colorama in the terminal
-  ```sh
-  pip install colorama
-  ```
-
-2. Install Openai in the terminal
-  ```sh
-  pip install openai
-  ```
-
 
 
 ### Installation
@@ -39,9 +24,13 @@
    ```sh
    git clone https://github.com/bryanrg22/Wordle.git
    ```
-3. Install NPM packages
+3. Install Colorama through the Terminal
    ```sh
-   npm install
+   pip install colorama
+   ```
+4. Install Openai through the Terminal
+   ```sh
+   pip install openai
    ```
 4. Enter your API in `config.js`
    ```js
