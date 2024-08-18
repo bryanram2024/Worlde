@@ -1,7 +1,5 @@
 # Wordle
 
-https://raw.githubusercontent.com/bryanrg22/Wordle/AP_CSP_Project_Video.mov
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
