@@ -41,6 +41,7 @@ def open_ai(prompt):
         messages = [{"role": "user", "content": prompt},
         ]
     )
+    return response.choices[0].message.content.strip()
 
 """
 Generates a random word from list based on length of word.
