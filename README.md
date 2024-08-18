@@ -15,7 +15,8 @@
 
 ### Prerequisites
 
-First you must download the necessary libraries to get the program running! As of this guide, it will direct you on how to download the libraries on a Mac device.
+* First you must download the necessary libraries to get the program running!
+* As of this guide, it will direct you on how to download the libraries on a Mac device.
 
 1. Install Colorama in the terminal
   ```sh
@@ -27,16 +28,12 @@ First you must download the necessary libraries to get the program running! As o
   pip install openai
   ```
 
-3. Activate an OpenAI API Key
-  ```sh
-  npm install npm@latest -g
-  ```
+
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a API Key at [(https://platform.openai.com/api-keys)](https://platform.openai.com/api-keys)
 2. Clone the repo
    ```sh
    git clone https://github.com/github_username/repo_name.git
