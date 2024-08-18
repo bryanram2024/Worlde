@@ -32,9 +32,9 @@
    ```sh
    pip install openai
    ```
-4. Enter your API in `config.js`
+4. Enter your API in `wordle.py` on Line 11
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   openai.api_key = 'ENTER YOUR API'
    ```
 5. Change git remote url to avoid accidental pushes to base project
    ```sh
