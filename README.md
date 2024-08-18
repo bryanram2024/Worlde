@@ -3,9 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<video src="https://raw.githubusercontent.com/bryanrg22/Wordle/main/AP_CSP_Project_Video.mov" controls="controls" style="max-width: 100%;">
-    Your browser does not support the video tag.
-</video>
+https://user-images.githubusercontent.com/782127/234028498-96e206b0-9a70-4aa0-9c36-a62477ea0aa9.mp4
 
 ### Built With
 ![python_badge]
