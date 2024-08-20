@@ -3,7 +3,7 @@ Wordle: A game where the User Guesses the Random Word.
 """
 
 from colorama import Fore, Back, Style   # Imports 'colorama' library that adds style features to output in the terminal.
-import openai                            # Imports 'openai' library to use ChatGPT to generate random word.
+import openai                            # Imports 'openai' library to use ChatGPT to generate random word and hint.
 import random                            # Imports 'random' library to randomize the generation of the word from ChatGPT 
 
 
@@ -139,7 +139,7 @@ def game(level, r_word):
         user_guess = list(get_user_guess(level, r_word, attempt, hint))
 
         # If user guesses the random word, break the loop and return True.
-        if user_guess == r_word:
+        if user_guess == list(r_word):
             print(f"{green_h}{bold}{''.join(r_word)}{reset}")
             return True
         
@@ -151,7 +151,7 @@ def game(level, r_word):
 
             # Make a list that holds the available letters. This prevents repeated letters
             # turning yellow.
-            available_letters = r_word[:]
+            available_letters = list(r_word)
 
             # Iterate through every letter first to macth green letters and remove from availabe
             # letters.
