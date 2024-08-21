@@ -1,13 +1,15 @@
 # Wordle
 
-[https://github.com/user-attachments/assets/61def674-bd5d-4582-a6b7-0f38bf574ae8]
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 ### Built With
 ![python_badge]
 ![openai_badge]
+
+
+[](https://github.com/user-attachments/assets/61def674-bd5d-4582-a6b7-0f38bf574ae8)
+
 
 Wordle is a Python-based implementation of the popular word-guessing game. In this version, the user attempts to guess a randomly generated word, with the length and difficulty determined by the selected mode. The game utilizes the OpenAI GPT-3.5 API to dynamically generate random words, ensuring a fresh challenge with each playthrough.
 
