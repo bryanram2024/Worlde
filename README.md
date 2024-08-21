@@ -1,5 +1,7 @@
 # Wordle
 
+[https://github.com/user-attachments/assets/61def674-bd5d-4582-a6b7-0f38bf574ae8]
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
